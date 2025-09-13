@@ -7,18 +7,30 @@ const Root = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <div className="w-9/12 mx-auto ">
-      <Navbar collapsed={collapsed} onToggleSidebar={() => setCollapsed(!collapsed)} />
+    <div className="h-screen flex flex-col md:mx-16 lg:mx-40">
+      {/* Fixed Navbar */}
+      <div className="sticky top-0 z-50 bg-white">
+        <Navbar
+          collapsed={collapsed}
+          onToggleSidebar={() => setCollapsed(!collapsed)}
+        />
+      </div>
 
-      <main className="my-3 grid grid-cols-12 gap-5">
-        <aside className={`${collapsed ? "col-span-2" : "col-span-4"}`}>
+      <div className="flex flex-1 overflow-hidden">
+        {/* Sidebar */}
+        <aside
+          className={`${
+            collapsed ? "w-20" : "w-64"
+          }  h-full sticky top-0`}
+        >
           <LeftSide collapsed={collapsed} />
         </aside>
 
-        <section className={`${collapsed ? "col-span-10" : "col-span-8"}`}>
+        {/* Main content */}
+        <main className="flex-1 h-full overflow-y-auto p-4 scrollbar-hide">
           <Outlet />
-        </section>
-      </main>
+        </main>
+      </div>
     </div>
   );
 };

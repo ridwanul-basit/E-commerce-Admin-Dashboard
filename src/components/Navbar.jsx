@@ -38,9 +38,9 @@ const Navbar = ({ collapsed, onToggleSidebar }) => {
   />
 </div>
 
-          {!collapsed && (
+          
             <span className="text-3xl font-bold text-blue-600">falcon</span>
-          )}
+         
         </div>
       </div>
 

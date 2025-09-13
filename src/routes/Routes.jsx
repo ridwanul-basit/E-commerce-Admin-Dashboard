@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router';
 import Root from './Root';
+import DashboardDefault from '../components/DashboardDefault';
 
 
 const Router = createBrowserRouter([
@@ -10,10 +11,10 @@ const Router = createBrowserRouter([
         
         children:[
 
-            // {
-            //     path: "",
-            //   element: <Home></Home> ,
-            // },
+            {
+                path: "/dashboardDefault",
+              element: <DashboardDefault></DashboardDefault>
+            },
             // {
             // path: "/category/:id",
             //   element: <CategoryNews></CategoryNews> ,
