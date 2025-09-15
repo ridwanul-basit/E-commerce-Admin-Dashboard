@@ -4,11 +4,12 @@ import {
   Search,
   Settings,
   ShoppingCart,
-  Bell,
   Grid,
   Menu,
   TextAlignStart,
 } from "lucide-react";
+import { NavLink } from "react-router";
+import NotificationBell from "./NotificationBell"; // ✅ Import notification dropdown
 
 const Navbar = ({ collapsed, onToggleSidebar }) => {
   return (
@@ -16,31 +17,24 @@ const Navbar = ({ collapsed, onToggleSidebar }) => {
       {/* Left side: Menu + Logo */}
       <div className="flex items-center space-x-6">
         {/* Menu Button */}
-        <button
-          onClick={onToggleSidebar}
-          className="py-2 rounded-lg "
-        >
+        <button onClick={onToggleSidebar} className="py-2 rounded-lg">
           {collapsed ? (
-            <TextAlignStart size={24} className="text-gray-600 " />
-           
+            <TextAlignStart size={24} className="text-gray-600" />
           ) : (
-             <Menu size={24} className="text-gray-600" />
+            <Menu size={24} className="text-gray-600" />
           )}
         </button>
 
-        {/* Logo (hide text when collapsed) */}
+        {/* Logo */}
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
-  <img
-    src="https://frlive.prium.me/assets/falcon-DyLXFfhF.png"
-    alt="F Icon"
-    className="w-full h-full object-cover"
-  />
-</div>
-
-          
-            <span className="text-3xl font-bold text-blue-600">falcon</span>
-         
+            <img
+              src="https://frlive.prium.me/assets/falcon-DyLXFfhF.png"
+              alt="F Icon"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <span className="text-3xl font-bold text-blue-600">falcon</span>
         </div>
       </div>
 
@@ -59,21 +53,18 @@ const Navbar = ({ collapsed, onToggleSidebar }) => {
         </div>
       </div>
 
-      {/* Icons + Profile */}
+      {/* Right side: Icons + Profile */}
       <div className="flex items-center space-x-5 text-gray-600">
         <Settings size={20} className="cursor-pointer hover:text-blue-600" />
-        <ShoppingCart size={20} className="cursor-pointer hover:text-blue-600" />
-        
 
-        {/* Notification with badge */}
-        <div className="relative">
-          <Bell size={20} className="cursor-pointer hover:text-blue-600" />
-          <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-1 rounded-full">
-            9
-          </span>
-        </div>
+        <NavLink to={"/shoppingCart"}>
+          <ShoppingCart size={20} className="cursor-pointer hover:text-blue-600" />
+        </NavLink>
 
-        <Grid size={20} className="cursor-pointer hover:text-blue-600" />
+        {/* ✅ Notification Dropdown */}
+        <NotificationBell />
+
+        <Grid size={24} className="cursor-pointer hover:text-blue-600" />
 
         {/* Profile Image */}
         <img

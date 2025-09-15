@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router';
 import Root from './Root';
 import DashboardDefault from '../components/DashboardDefault';
+import ShoppingCart from '../components/ShoppingCart';
 
 
 const Router = createBrowserRouter([
@@ -15,6 +16,10 @@ const Router = createBrowserRouter([
                 path: "/dashboardDefault",
               element: <DashboardDefault></DashboardDefault>
             },
+            {
+                path: "/shoppingCart",
+              element: <ShoppingCart></ShoppingCart>
+            }
             // {
             // path: "/category/:id",
             //   element: <CategoryNews></CategoryNews> ,
