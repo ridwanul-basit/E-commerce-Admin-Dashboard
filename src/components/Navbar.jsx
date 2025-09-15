@@ -1,5 +1,4 @@
-// Navbar.jsx
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Search,
   Settings,
@@ -9,14 +8,32 @@ import {
   TextAlignStart,
 } from "lucide-react";
 import { NavLink } from "react-router";
-import NotificationBell from "./NotificationBell"; // ✅ Import notification dropdown
+import NotificationBell from "./NotificationBell";
+import AppsDropdown from "./AppsDropdown"; // ✅ Import dropdown
 
 const Navbar = ({ collapsed, onToggleSidebar }) => {
+  const [appsOpen, setAppsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // ✅ Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setAppsOpen(false);
+      }
+    };
+    if (appsOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [appsOpen]);
+
   return (
     <nav className="px-5 py-4 flex bg-[#EDF2F9] items-center justify-between z-50 sticky top-0">
-      {/* Left side: Menu + Logo */}
+      {/* Left side */}
       <div className="flex items-center space-x-6">
-        {/* Menu Button */}
         <button onClick={onToggleSidebar} className="py-2 rounded-lg">
           {collapsed ? (
             <TextAlignStart size={24} className="text-gray-600" />
@@ -25,7 +42,6 @@ const Navbar = ({ collapsed, onToggleSidebar }) => {
           )}
         </button>
 
-        {/* Logo */}
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
             <img
@@ -38,7 +54,7 @@ const Navbar = ({ collapsed, onToggleSidebar }) => {
         </div>
       </div>
 
-      {/* Search bar */}
+      {/* Search */}
       <div className="flex-1 max-w-lg mx-8">
         <div className="relative">
           <Search
@@ -53,20 +69,24 @@ const Navbar = ({ collapsed, onToggleSidebar }) => {
         </div>
       </div>
 
-      {/* Right side: Icons + Profile */}
-      <div className="flex items-center space-x-5 text-gray-600">
+      {/* Right side */}
+      <div className="flex items-center space-x-5 text-gray-600 relative">
         <Settings size={20} className="cursor-pointer hover:text-blue-600" />
-
         <NavLink to={"/shoppingCart"}>
           <ShoppingCart size={20} className="cursor-pointer hover:text-blue-600" />
         </NavLink>
-
-        {/* ✅ Notification Dropdown */}
         <NotificationBell />
 
-        <Grid size={24} className="cursor-pointer hover:text-blue-600" />
+        {/* ✅ Grid dropdown toggle */}
+        <div className="relative" ref={dropdownRef}>
+          <Grid
+            size={24}
+            className="cursor-pointer hover:text-blue-600"
+            onClick={() => setAppsOpen(!appsOpen)}
+          />
+          <AppsDropdown open={appsOpen} />
+        </div>
 
-        {/* Profile Image */}
         <img
           src="https://i.pravatar.cc/40"
           alt="profile"

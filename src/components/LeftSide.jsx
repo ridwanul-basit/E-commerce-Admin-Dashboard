@@ -95,8 +95,8 @@ const LeftSide = ({ collapsed }) => {
       {/* Dashboard */}
       {renderToggleMenu("dashboard", <LayoutDashboard size={18} />, "Dashboard", [
         renderSubMenuItem("/dashboardDefault", "Default"),
-        renderSubMenuItem("/dashboard/analytics", "Analytics"),
-        renderSubMenuItem("/dashboard/crm", "CRM"),
+        renderSubMenuItem("/analytics", "Analytics"),
+        renderSubMenuItem("analyticsCRM", "CRM"),
         renderSubMenuItem("/dashboard/ecommerce", "E Commerce"),
         renderSubMenuItem(
           "/dashboard/lms",
@@ -116,13 +116,13 @@ const LeftSide = ({ collapsed }) => {
       <div className="mt-4">{renderMenuItem(<Calendar size={18} />, "Calendar", "/calendar")}</div>
 
       {/* Chat */}
-      <div className="mt-2">{renderMenuItem(<MessageSquare size={18} />, "Chat", "/chat")}</div>
+      <div className="mt-2">{renderMenuItem(<MessageSquare size={18} />, "Chat", "/chatting")}</div>
 
       {/* Email */}
       {renderToggleMenu("email", <Mail size={18} />, "Email", [
-        renderSubMenuItem("/email/inbox", "Inbox"),
+        renderSubMenuItem("/chatbox", "Inbox"),
         renderSubMenuItem("/email/detail", "Email detail"),
-        renderSubMenuItem("/email/compose", "Compose"),
+        renderSubMenuItem("/compose", "Compose"),
       ])}
 
       {/* Events */}
@@ -134,8 +134,8 @@ const LeftSide = ({ collapsed }) => {
       {/* E-Commerce */}
       {renderToggleMenu("ecommerce", <ShoppingCart size={18} />, "E Commerce", [
         <li className="font-bold mt-2 text-[#5E6E82]">Product</li>,
-        renderSubMenuItem("/ecommerce/product/add", "Add a product"),
-        renderSubMenuItem("/ecommerce/product/list", "Product list"),
+        renderSubMenuItem("/addproduct", "Add a product"),
+        renderSubMenuItem("/productlist", "Product list"),
         renderSubMenuItem("/ecommerce/product/grid", "Product grid"),
         renderSubMenuItem("/ecommerce/product/details", "Product details"),
         <li className="font-bold mt-2 text-[#5E6E82]">Orders</li>,

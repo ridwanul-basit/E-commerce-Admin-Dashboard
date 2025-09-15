@@ -3,6 +3,15 @@ import { createBrowserRouter } from 'react-router';
 import Root from './Root';
 import DashboardDefault from '../components/DashboardDefault';
 import ShoppingCart from '../components/ShoppingCart';
+import Analytics from '../components/Analytics';
+import AnalyticsCRM from '../components/AnalyticsCRM';
+import ChatBox from '../components/ChatBox';
+import ComposeBox from '../components/ComposeBox';
+import SimpleCalendar from '../components/SimpleCalendar';
+import ChattingBox from '../components/ChattingBox';
+import AddProduct from '@/components/AddProduct';
+import ProductList from '@/components/ProductList';
+// import CalendarBox from '../components/CalendarBox';
 
 
 const Router = createBrowserRouter([
@@ -19,6 +28,38 @@ const Router = createBrowserRouter([
             {
                 path: "/shoppingCart",
               element: <ShoppingCart></ShoppingCart>
+            },
+            {
+                path: "/analytics",
+              element: <Analytics></Analytics>
+            },
+            {
+                path: "/analyticsCRM",
+              element: <AnalyticsCRM></AnalyticsCRM>
+            },
+            {
+                path: "/chatbox",
+              element: <ChatBox></ChatBox>
+            },
+            {
+                path: "/compose",
+              element:   <ComposeBox></ComposeBox> ,
+            },
+            {
+                path: "/calendar",
+              element:<SimpleCalendar></SimpleCalendar> ,
+            },
+            {
+                path: "/chatting",
+              element:<ChattingBox></ChattingBox> ,
+            },
+            {
+                path: "/addproduct",
+              element:<AddProduct></AddProduct> ,
+            },
+            {
+                path: "/productlist",
+              element:<ProductList></ProductList> ,
             }
             // {
             // path: "/category/:id",
