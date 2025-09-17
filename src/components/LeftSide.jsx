@@ -127,8 +127,8 @@ const LeftSide = ({ collapsed }) => {
 
       {/* Events */}
       {renderToggleMenu("events", <Calendar size={18} />, "Events", [
-        renderSubMenuItem("/events/upcoming", "Upcoming"),
-        renderSubMenuItem("/events/past", "Past"),
+        renderSubMenuItem("/event", "Upcoming"),
+        renderSubMenuItem("/event", "Past"),
       ])}
 
       {/* E-Commerce */}
@@ -139,12 +139,12 @@ const LeftSide = ({ collapsed }) => {
         renderSubMenuItem("/ecommerce/product/grid", "Product grid"),
         renderSubMenuItem("/ecommerce/product/details", "Product details"),
         <li className="font-bold mt-2 text-[#5E6E82]">Orders</li>,
-        renderSubMenuItem("/ecommerce/orders/customers", "Customers"),
+        renderSubMenuItem("/orderlist", "Customers"),
         renderSubMenuItem("/ecommerce/orders/customer-details", "Customer details"),
-        renderSubMenuItem("/ecommerce/orders/cart", "Shopping cart"),
+        renderSubMenuItem("/shoppingCart", "Shopping cart"),
         renderSubMenuItem("/ecommerce/orders/checkout", "Checkout"),
-        renderSubMenuItem("/ecommerce/orders/billing", "Billing"),
-        renderSubMenuItem("/ecommerce/orders/invoice", "Invoice"),
+        renderSubMenuItem("/billing", "Billing"),
+        renderSubMenuItem("/invoice", "Invoice"),
       ])}
 
       {/* E-Learning */}
@@ -159,10 +159,10 @@ const LeftSide = ({ collapsed }) => {
 
       {/* Social */}
       {renderToggleMenu("social", <Share2 size={18} />, "Social", [
-        renderSubMenuItem("/social/feed", "Feed"),
+        renderSubMenuItem("/feed", "Feed"),
         renderSubMenuItem("/social/activity", "Activity log"),
         renderSubMenuItem("/social/notifications", "Notifications"),
-        renderSubMenuItem("/social/followers", "Followers"),
+        renderSubMenuItem("/followers", "Followers"),
       ])}
 
       {/* Support Desk */}
