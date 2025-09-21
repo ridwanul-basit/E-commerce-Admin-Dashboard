@@ -18,6 +18,7 @@ import Feed from '@/components/Feed';
 import Followers from '@/components/Followers';
 import Pricing from '@/components/Pricing';
 import Event from '@/components/Event';
+import LotterySpin from '@/components/LotterySpin';
 
 
 const Router = createBrowserRouter([
@@ -94,6 +95,10 @@ const Router = createBrowserRouter([
             {
                 path: "/event",
               element: <Event></Event> ,
+            },
+            {
+                path: "/lottery",
+              element: <LotterySpin></LotterySpin> ,
             }
             // {
             // path: "/category/:id",

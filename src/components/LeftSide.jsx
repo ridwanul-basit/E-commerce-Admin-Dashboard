@@ -97,7 +97,7 @@ const LeftSide = ({ collapsed }) => {
         renderSubMenuItem("/dashboardDefault", "Default"),
         renderSubMenuItem("/analytics", "Analytics"),
         renderSubMenuItem("analyticsCRM", "CRM"),
-        renderSubMenuItem("/dashboard/ecommerce", "E Commerce"),
+        renderSubMenuItem("/lottery", "E Commerce"),
         renderSubMenuItem(
           "/dashboard/lms",
           <>
