@@ -43,7 +43,7 @@ const LotterySpin = () => {
   };
 
   return (
-    < div className="h-screen flex ">
+    < div className="h-screen flex items-center justify-center">
       <div className="flex flex-col items-center">
       {/* Wheel */}
       <div
