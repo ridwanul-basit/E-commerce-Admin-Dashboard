@@ -107,8 +107,8 @@ const LeftSide = ({ collapsed }) => {
             </span>
           </>
         ),
-        renderSubMenuItem("/dashboard/management", "Management"),
-        renderSubMenuItem("/dashboard/saas", "SaaS"),
+        renderSubMenuItem("/blur", "Management"),
+        renderSubMenuItem("/tree", "SaaS"),
         renderSubMenuItem("/dashboard/support", "Support Desk"),
       ])}
 

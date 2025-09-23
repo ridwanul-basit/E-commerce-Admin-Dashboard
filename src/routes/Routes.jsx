@@ -19,6 +19,8 @@ import Followers from '@/components/Followers';
 import Pricing from '@/components/Pricing';
 import Event from '@/components/Event';
 import LotterySpin from '@/components/LotterySpin';
+import BlurText from '@/components/BlurText';
+import SingleSelectTreeView from '@/components/SingleSelectTreeView';
 
 
 const Router = createBrowserRouter([
@@ -99,6 +101,14 @@ const Router = createBrowserRouter([
             {
                 path: "/lottery",
               element: <LotterySpin></LotterySpin> ,
+            },
+            {
+                path: "/blur",
+              element: <BlurText></BlurText> ,
+            },
+            {
+                path: "/tree",
+              element: <SingleSelectTreeView></SingleSelectTreeView> ,
             }
             // {
             // path: "/category/:id",
