@@ -12,7 +12,10 @@ export default function SingleSelectTreeView() {
           <TreeItem itemId="grid-pro" label="@mui/x-data-grid-pro" />
           <TreeItem itemId="grid-premium" label="@mui/x-data-grid-premium" />
         </TreeItem>
-       
+        <TreeItem itemId="pickers" label="Date and Time Pickers">
+          <TreeItem itemId="pickers-community" label="@mui/x-date-pickers" />
+          <TreeItem itemId="pickers-pro" label="@mui/x-date-pickers-pro" />
+        </TreeItem>
         <TreeItem itemId="charts" label="Charts">
           <TreeItem itemId="charts-community" label="@mui/x-charts" />
         </TreeItem>
